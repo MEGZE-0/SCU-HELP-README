@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCU-HELP Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #007bff;
+            text-align: center;
+        }
+        h2 {
+            color: #007bff;
+            margin-top: 30px;
+        }
+        p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+        pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            color: #c7254e;
+            background-color: #f9f2f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SCU-HELP Documentation</h1>
+
+        <h2 id="introduction">Introduction</h2>
+        <p>Welcome to the documentation for SCU-HELP. This document provides comprehensive instructions on how to set up, run, and test the project locally using Postman. SCU-HELP is a web application designed for Students To Help theme manage their files and materials.</p>
+
+        <h2 id="prerequisites">Prerequisites</h2>
+        <p>Before proceeding, ensure you have the following prerequisites installed on your system:</p>
+        <ul>
+            <li>Node.js (with npm) (recommended version is 21.x)</li>
+            <li>Git</li>
+            <li>Visual Studio Code (optional but recommended)</li>
+            <li>Postman</li>
+        </ul>
+
+        <h2 id="installation">Installation</h2>
+        <p>Clone the repository:</p>
+        <pre><code>git clone &lt;repository-url&gt;</code></pre>
+
+        <p>Open the project in Visual Studio Code (optional):</p>
+        <pre><code>code &lt;project-directory&gt;</code></pre>
+
+        <p>Navigate to the backend directory:</p>
+        <pre><code>cd backend</code></pre>
+
+        <p>Install dependencies:</p>
+        <pre><code>npm install</code></pre>
+
+        <h2 id="running">Running the Project</h2>
+        <p>To run the project in development mode, use the following command:</p>
+        <pre><code>npm run dev</code></pre>
+
+        <p>Alternatively, you can run it using:</p>
+        <pre><code>node app.js</code></pre>
+
+        <p>The project will start running on <a href="http://localhost:3000">http://localhost:3000</a> by default.</p>
+
+        <h2 id="accessing">Accessing the Website</h2>
+        <p>Once the server is running, you can access the website by opening a web browser and navigating to:</p>
+        <pre><code>http://localhost:3000</code></pre>
+
+        <h2 id="testing">Testing with Postman</h2>
+        <ol>
+            <li>Ensure the backend server is running.</li>
+            <li>Open Postman.</li>
+            <li>Import the provided Postman collection file (<a href="https://drive.google.com/drive/folders/1mmSYZOAN2muiU_RTWWqpgKK96MytkB1z?usp=drive_link"><code>&lt;project-name&gt;.postman_collection.json</code></a>).</li>
+            <li>Once imported, you will find a collection named <strong>SCU-HELP</strong> with various routes for testing.</li>
+            <li>Before testing, ensure to set up the necessary cookies for authenticated routes. You can do this by:
+                <ul>
+                    <li>Open any browser and install a cookie editor extension.</li>
+                    <li>Log in to the website and copy the session cookie.</li>
+                    <li>In Postman, navigate to the Cookies section of the request and replace the existing cookie with the copied one.</li>
+                </ul>
+            </li>
+            <li>Test the routes as needed.</li>
+        </ol>
+
+        <h2 id="additional">Additional Information</h2>
+        <p>Website URL: <a href="https://scu-help-mt8j.onrender.com" style="font-weight: bold; color: red;">SCU-HELP WEBSITE</a> <span style="font-weight: bold; color: orange;">(Please wait for a moment while the website loads <span style="font-size: 20px;">😊</span> as we are on a free tier)</span></p>
+        <p>Project URL: <a href="[Insert Project Repository URL]">[Insert Project Repository URL]</a></p>
+        <p>Video URL: <a href="[Insert Video URL]">[Insert Video URL]</a></p>
+
+        <h2 id="routes">Routes</h2>
+        <ul>
+            <li>GET /get-username: Retrieve username.</li>
+            <li>GET /get-userdata: Retrieve user data.</li>
+            <li>POST /admin-register: Register admin.</li>
+            <li>GET /admin/users: Get list of admin users.</li>
+            <li>GET /admin/documents: Get admin documents.</li>
+            <li>DELETE /admin/document/:documentId: Delete admin document.</li>
+            <li>POST /forgot-password: Request password reset.</li>
+            <li>GET /reset-password: Reset password.</li>
+            <li>POST /reset-password: Reset password.</li>
+            <li>POST /admin-login: Admin login.</li>
+            <li>POST /admin-logout: Admin logout.</li>
+            <li>POST /register: User registration.</li>
+            <li>POST /resend-verification-code: Resend verification code.</li>
+            <li>POST /verify: Verify user.</li>
+            <li>GET /admin/users/:id: Get admin user by ID.</li>
+            <li>DELETE /admin/users/:id: Delete admin user by ID.</li>
+            <li>POST /login: User login.</li>
+            <li>POST /logout: User logout.</li>
+            <li>POST /upload: Upload file.</li>
+            <li>GET /user-documents: Get user documents.</li>
+            <li>GET /documents: Get documents.</li>
+            <li>GET /files/:fileName: Get file by name.</li>
+            <li>GET /download/:fileName: Download file by name.</li>
+            <li>DELETE /documents/:id: Delete document by ID.</li>
+            <li>POST /send-email: Send email.</li>
+            <li>POST /update-profile: Update user profile.</li>
+            <li>POST /admin-profile/:userId: Update admin profile by user ID.</li>
+        </ul>
+        
+
+        <h2 id="conclusion">Conclusion</h2>
+        <p>Congratulations on setting up and testing SCU-HELP! If you have any further questions or need assistance, feel free to reach out to us.</p>
+        <p>Thank you for choosing SCU-HELP!</p>
+
+        <h2 id="contact">Contact</h2>
+        <p>For any inquiries or support, please contact us at <a href="mailto:scuhelp65@gmail.com">scuhelp65@gmail.com</a>.</p>
+    </div>
+</body>
+</html>
